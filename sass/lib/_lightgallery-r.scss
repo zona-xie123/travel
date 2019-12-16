@@ -1,0 +1,92 @@
+.lg-backdrop {
+    background: rgba(0, 0, 0, 0.95);
+}
+
+
+#lg-counter {
+    color: #fff;
+    opacity: 0;
+}
+
+.lg-toolbar {
+    background: transparent;
+}
+
+
+
+.video-layout {
+    &.lg-hide-items {
+        .lg-toolbar {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .lg-close {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .lg-video {
+        background: #000;
+    }
+
+    .lg-toogle-thumb {
+        color: #FFC500;
+    }
+
+    .lg-thumb {
+        margin: 0 auto -5px;
+    }
+
+    .lg-thumb-item {
+        &.active, &:hover {
+            border-color: #ffc500;
+        }
+    }
+
+    .lg-close {
+        position: fixed;
+        z-index: 100;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        right:15px;
+        top:15px;
+        transform: translate3d(0, 0, 0);
+        background:url('../img/site/btn-close.png') no-repeat center;
+        background-size: 70%;
+        &:after {
+           display: none;
+        }
+    }
+}
+
+
+.lg-actions
+{
+    .lg-next
+    {
+        background:url('../img/site/btn-next.png') no-repeat center;
+        background-size: 70%;
+        font-size: 0;
+        &:before {
+           display: none;
+        }
+    }
+
+    .lg-prev
+    {
+        background:url('../img/site/btn-prev.png') no-repeat center;
+        background-size: 70%;
+        &:after {
+           display: none;
+        }
+    }
+}
+
+.lg-backdrop.in {
+    opacity: 0.85;
+}
+
+
+

@@ -1,0 +1,311 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/earlyaccess/notosanstc.css");
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+body { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+a{outline: none}
+
+/* ------------------------------------------ 選單樣式 --------------------------------------------- */
+.nav-collapse ul { margin: 0; padding: 0; width: 100%; display: block; list-style: none; }
+
+.nav-collapse li { width: 100%; display: block; }
+
+.js .nav-collapse { clip: rect(0 0 0 0); max-height: 0; position: absolute; display: block; overflow: hidden; zoom: 1; }
+
+.nav-collapse.opened { max-height: 9999px; }
+
+.disable-pointer-events { pointer-events: none !important; }
+
+.nav-toggle { -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; }
+
+@media screen and (min-width: 768px) { .js .nav-collapse { position: relative; }
+  .js .nav-collapse.closed { max-height: none; }
+  .nav-toggle { display: none; } }
+
+header { background: url("../images/headerFooter/headerBg.png") repeat-x; background-size: 100% 100%; position: fixed; /*浮動也可以拿掉*/ z-index: 10000; width: 100%; height: 40px; left: 0; top: 0; }
+
+.container_fluid { margin: 0 auto; max-width: 1200px; position: relative; }
+
+.esunlogo { background: url("../images/headerFooter/logo.png") no-repeat; background-size: 100% auto; background-position: center; display: inline-block; cursor: pointer; width: 198px; height: 40px; left: 5px; position: absolute; }
+
+.mask { transition: opacity 300ms; background: rgba(0, 0, 0, 0.6); visibility: hidden; position: fixed; opacity: 0; z-index: 1000; bottom: 0; right: 0; left: 0; top: 0; }
+
+.android .mask { transition: none; }
+
+.js-nav-active .mask { visibility: visible; opacity: 1; }
+
+@media screen and (min-width: 768px) { .mask { display: none !important; opacity: 0 !important; } }
+
+.fixed { position: fixed; width: 100%; left: 0; top: 0; }
+
+.nav-collapse, .nav-collapse * { box-sizing: border-box; }
+
+.nav-collapse, .nav-collapse ul { list-style: none; width: 100%; float: left; }
+
+@media screen and (min-width: 768px) { .nav-collapse { float: right; width: auto; } }
+
+.nav-collapse li { float: left; width: 100%; }
+
+@media screen and (min-width: 768px) { .nav-collapse li { width: auto; } }
+
+.nav-collapse a { -webkit-tap-highlight-color: transparent; /*border-top: 1px solid white;*/ text-decoration: none; padding: 12px 20px; color: gray; width: 100%; float: left; }
+
+.nav-collapse a:hover { color: #fff; background: #009E96; }
+
+@media screen and (max-width: 767px) { .nav-collapse a { background: #019D97; border-bottom: 1px solid #00AAA4; color: #fff; text-align: center; }
+  .nav-collapse a:hover { background: #00C1BA; } }
+
+.nav-collapse .active a { background: #009E96; color: white; cursor: pointer; }
+
+@media screen and (min-width: 768px) { .nav-collapse a { /*border-left: 1px solid white;*/ text-align: center; border-top: 0; float: left; font-size: 1rem; margin: 0; color: gray; } }
+
+.nav-collapse ul ul a { background: #ca3716; padding-left: 2em; }
+
+@media screen and (min-width: 768px) { .nav-collapse ul ul a { display: none; } }
+
+.nav-toggle { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-decoration: none; text-indent: -300px; position: relative; overflow: hidden; width: 50px; height: 40px; top: 2px; float: right; }
+
+.nav-toggle:before { font-size: 30px; text-transform: none; text-align: center; position: absolute; color: #009D97; content: "\f0c9"; font-family: "FontAwesome"; /* Hamburger icon */ text-indent: 0; speak: none; width: 100%; left: 0; top: 2px; }
+
+.nav-toggle.active:before { color: #009D97; content: "\f00d"; font-family: "FontAwesome"; transition-property: all .2s linear 0s; -moz-transition: all .2s linear 0s; -webkit-transition: all .2s linear 0s; -o-transition: all .2s linear 0s; }
+
+/* ------------------------------------------ 頁尾 --------------------------------------------- */
+.footer { display: block; bottom: 0; left: 0; width: 100%; background: url("../images/headerFooter/footerBg.jpg") repeat-y center; }
+
+.footer .anchor { text-align: center; line-height: 24px; padding: 13px 0; }
+
+.footer .anchor li { display: inline-block; color: #fff; font-size: 13px; line-height: 20px; letter-spacing: 0.06em; }
+
+.footer .anchor li a { display: inline; color: #fff; font-weight: normal; text-decoration: none; cursor: pointer; }
+
+.footer .anchor li:before { color: #30ABAF; content: "|"; padding: 0 5px 0 1px; }
+
+.footer .anchor li.first:before { content: " "; padding: 0 5px 0 0; }
+
+// 
+  
+  .footer { 
+    width: 100%;
+    padding-bottom: 16px;
+    background: url(../images/headerFooter/footer-bg.jpg) repeat-y center bottom;
+    .top {
+      background-color: $footer-color;
+      ul {
+        max-width: $pc-media;
+        margin: 0 auto; 
+        color: $color-grayDark;
+        vertical-align: middle;
+        li { 
+          @include display(inline-block);
+          letter-spacing: -0.01em;
+          margin: 20px 0;
+          @include pc-width() {
+            margin: 0;
+          }
+        }
+        .col-warning {
+          width: 278px;
+          height: 31px;
+          background: url(../images/headerFooter/footer-cardWarning.jpg) no-repeat;
+          @include pc-width() {
+            width: 100%;
+            background-position: center;
+            margin: 20px 0 0 0;
+          }
+        }
+        .col-rate {
+          width: 65%;
+          max-width: 900px;
+          float: right;
+          font-size: $font-size-h5;
+          line-height: $line-height-base;
+          @include text-align(justify);
+          @include pc-width() {
+            width: 100%; 
+            @include float(none);
+            letter-spacing: 0.01em;
+            div { 
+              @include w90pct-ctn;
+              @include mv(10px);
+            }
+          }        
+        }
+      }
+    }
+    .bottom ul {
+      max-height: 47px;
+      @include text-align(center);
+      line-height: $line-height-base;
+      font-family: $font-family-base;
+      padding-top: 16px;
+      li {
+        @include display(inline-block);
+        color: $link-color-lightest;
+        font-size: $font-size-h6;
+        line-height: 20px;
+        letter-spacing: 0.06em;
+        font-family: $font-family-base;
+      }
+      li:before {
+        color: #30ABAF;
+        content: "|";
+        padding: 0 5px 0 1px;
+      }
+      li.first:before {
+        content: "";
+        padding-left: 0;
+      }
+      a {
+        @include a-link($link-color-lightest);
+        @include display(inline);
+        font-weight: normal;
+      }
+    }
+  }
+
+  .insure {
+        position: relative;
+        text-align: center;
+        padding: 60px 0;
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f8fcfd+2,c0e0ef+100 */
+        background: #f8fcfd;
+        /* Old browsers */
+        background: -moz-linear-gradient(left, #f8fcfd 2%, #c0e0ef 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #f8fcfd 2%, #c0e0ef 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #f8fcfd 2%, #c0e0ef 100%);
+
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        padding: 10px;
+        width: 100%;
+        max-width: 1200px;
+        .insure_img {
+            max-width: 200px;
+            position: absolute;
+            left: 50px;
+            top: 150px;
+
+            @include pad() {
+                display: none;
+            }
+        }
+        .insure_img03{
+            top:40px;
+            max-width: 150px;
+        }
+        h2 {
+            font-size: 26px;
+            color: #009e95;
+        }
+
+        ul {
+            max-width: 600px;
+            margin: auto;
+            margin-top: 30px;
+
+            li {
+                text-align: justify;
+                line-height: 1.5;
+
+                img {
+                    max-width: 20px;
+                    position: relative;
+                    top: 3px;
+                    margin-right: 10px;
+
+
+                }
+
+                ul {
+                    margin-top: 0;
+                    margin-left: 45px;
+                    list-style-type: disc;
+
+                    li {
+                        text-align: justify;
+                    }
+
+                    p {
+                        text-align: justify;
+                    }
+
+                    .sm {
+                        font-size: 12px;
+                    }
+
+                    table {
+                        margin: 10px 0;
+                        text-align: center;
+
+                        @include iphone() {
+                            right: 20px;
+                            position: relative;
+
+                        }
+
+                        // max-width: 320px;
+                        thead {
+                            background-color: #009e95;
+                            color: #fff;
+
+
+
+                            tr {
+                                th {
+                                    border: 1px solid #fff;
+                                    padding: 10px 20px;
+
+                                    @include iphone() {
+                                        padding: 10px 0px;
+
+
+                                    }
+
+                                }
+                            }
+                        }
+
+                        tbody {
+
+                            tr {
+
+                                td {
+                                    border: 1px solid #ccc;
+                                    background-color: #fff;
+
+                                }
+                            }
+
+                        }
+                    }
+
+                    .pink {
+                        max-width: 200px;
+                        padding: 10px;
+                        text-align: center;
+                        color: #fff;
+                        margin: 20px 0;
+                        background-color: #F47079;
+
+                        @include pad() {
+                            margin: 30px auto;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
